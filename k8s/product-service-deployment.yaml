@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: product-service
-        image: bluelockrepo.azurecr.io/service-product:v2
+        image: bluelockrepo.azurecr.io/service-product:v5
         ports:
         - containerPort: 3000
         env:
