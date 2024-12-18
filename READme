@@ -1,0 +1,34 @@
+# Product Service E-commerce Dashboard
+
+This repository contains the source code for a **Product Service** e-commerce dashboard, designed with a dynamic gaming theme. The project includes the backend and frontend for an e-commerce service, as well as configurations for Docker and Kubernetes to deploy it in a containerized environment.
+
+## Table of Contents
+1. [Project Overview](#project-overview)
+2. [Installation](#installation)
+3. [Project Structure](#project-structure)
+4. [Running Locally](#running-locally)
+5. [Running with Docker](#running-with-docker)
+6. [Kubernetes Setup](#kubernetes-setup)
+7. [Monitoring with Prometheus](#monitoring-with-prometheus)
+8. [Feedback](#feedback)
+9. [License](#license)
+
+## Project Overview
+
+This project simulates a **gaming e-commerce dashboard** where users can view products, see sales data, and submit feedback. It includes:
+
+- A **frontend** built with HTML, CSS, and JavaScript.
+- A **backend** (which could be extended later) to handle product listings, sales data, and feedback submissions.
+- **Docker** setup for containerization.
+- **Kubernetes** deployment files to easily deploy the service in a Kubernetes cluster.
+- **Prometheus** for monitoring the application.
+
+## Installation
+
+To get started with the project, clone the repository and install the necessary dependencies:
+
+```bash
+git clone https://github.com/your-username/product-service.git
+cd product-service
+
+

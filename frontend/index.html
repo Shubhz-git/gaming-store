@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming E-commerce Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Welcome to the Gaming Store Dashboard</h1>
+        </header>
+
+        <!-- Navigation Menu -->
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#product-list">Products</a></li>
+                <li><a href="#sales-chart">Sales Chart</a></li>
+                <li><a href="#feedback-form">Feedback</a></li>
+            </ul>
+        </nav>
+
+        <!-- Product List -->
+        <section id="product-list">
+            <h2>Product List</h2>
+            <div class="product">
+                <p><strong>Product 1:</strong> $25.00</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <p><strong>Product 2:</strong> $40.00</p>
+                <button>Add to Cart</button>
+            </div>
+        </section>
+
+        <!-- Sales Chart -->
+        <section id="sales-chart">
+            <h2>Sales Chart</h2>
+            <canvas id="salesChart"></canvas>
+        </section>
+
+        <!-- Feedback Form -->
+        <section id="feedback-form">
+            <h2>Feedback Form</h2>
+            <form id="feedback" onsubmit="handleSubmit(event)">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Feedback:</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2024 Gaming Store. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        // Chart.js Example: Sales Chart
+        const ctx = document.getElementById('salesChart').getContext('2d');
+        const salesChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May'],
+                datasets: [{
+                    label: 'Monthly Sales ($)',
+                    data: [1200, 1900, 3000, 5000, 2400],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Feedback Form Submission
+        function handleSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            console.log(`Feedback submitted:
+                Name: ${name}
+                Email: ${email}
+                Message: ${message}`);
+            alert("Thank you for your feedback!");
+            document.getElementById('feedback').reset();
+        }
+    </script>
+</body>
+</html>
